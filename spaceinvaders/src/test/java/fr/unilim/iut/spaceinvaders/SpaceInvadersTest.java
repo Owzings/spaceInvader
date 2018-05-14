@@ -20,8 +20,9 @@
 		    "...............\n" + 
 		    "...............\n" + 
 		    "...............\n" + 
-		    "...............\n" , spaceinvaders.toString());
+		    "...............\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
 	        }
+	
 	   @Test
 		public void test_unNouveauVaisseauEstCorrectementPositionneDansEspaceJeu() {
 			SpaceInvaders spaceinvaders = new SpaceInvaders(15, 10);
@@ -36,6 +37,6 @@
 			"...............\n" + 
 			"...............\n" + 
 			"...............\n" + 
-			".......V.......\n" , spaceinvaders.toString());
+			".......V.......\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
 		}
        }
