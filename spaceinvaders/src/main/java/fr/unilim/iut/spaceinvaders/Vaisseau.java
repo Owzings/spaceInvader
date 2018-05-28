@@ -2,8 +2,7 @@ package fr.unilim.iut.spaceinvaders;
 
 public class Vaisseau {
 
-    int x;
-    int y;
+    Position origine;
     int longueur;
     int hauteur;
 
@@ -12,11 +11,10 @@ public class Vaisseau {
 	}
 
     public Vaisseau(int longueur, int hauteur, int x, int y) {
-	   this.longueur=longueur;
-	   this.hauteur=hauteur;
-	   this.x = x;
-	   this.y = y;
-    }
+ 	   this.longueur=longueur;
+ 	   this.hauteur=hauteur;
+ 	   this.origine = new Position (x,y);
+ 	   }
 
 	public boolean occupeLaPosition(int x, int y) {
 		return (estAbscisseCouverte(x) && estOrdonneeCouverte(y));
@@ -27,36 +25,34 @@ public class Vaisseau {
 	}
 
 	public boolean ordonneeLaPlusHaute(int y) {
-		return y <= this.y;
+		return y <= this.origine.ordonnee();
 	}
 
 	public boolean ordonneeLaPlusBasse(int y) {
-		return this.y - this.hauteur + 1 <= y;
+		return this.origine.ordonnee() - this.hauteur + 1 <= y;
 	}
 
 	public boolean estAbscisseCouverte(int x) {
 		return (abscisseLaPlusAGauche() <= x) && (x <= abscisseLaPlusADroite());
 	}
-    public void positionner(int x, int y) {
-	    this.x = x;
-	    this.y = y;
+	public void positionner(int x, int y) {
+		  this.origine.changerAbscisse(x);
+		  this.origine.changerOrdonnee(y);
     }
 
-	public void seDeplacerVersLaDroite() {
-		this.x = this.x + 1 ;
-		
-	}
+    public void seDeplacerVersLaDroite() {
+	    this.origine.changerAbscisse(this.origine.abscisse()+1);
+   }
 	public int abscisseLaPlusAGauche() {
-        return this.x;
+        return this.origine.abscisse();
 	}
 
 	public void seDeplacerVersLaGauche() {
-		this.x = this.x-1;
-		
-	}
+	    this.origine.changerAbscisse(this.origine.abscisse()-1);
+  }
 
 	public int abscisseLaPlusADroite() {
-		return this.x;
+		return this.origine.abscisse();
 	}
 
 }
