@@ -51,9 +51,9 @@ import fr.unilim.iut.spaceinvaders.utils.HorsEspaceJeuException;
 			".......V.......\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
 		}
 	   
-		@Test
+	   @Test
 		public void test_unNouveauVaisseauAvecDimensionEstCorrectementPositionneDansEspaceJeu() {
-			spaceinvaders.positionnerUnNouveauVaisseau(1,1,7,9);
+			spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(3,2),new Position(7,9), 1);
 			assertEquals("" + 
 			"...............\n" + 
 			"...............\n" +
@@ -70,10 +70,9 @@ import fr.unilim.iut.spaceinvaders.utils.HorsEspaceJeuException;
 	    @Test
 		public void test_VaisseauAvance_DeplacerVaisseauVersLaGauche() {
 			
-			spaceinvaders.positionnerUnNouveauVaisseau(1,1,7,9);
-
+			spaceinvaders.positionnerUnNouveauVaisseau(3,2,7,9);
 			spaceinvaders.deplacerVaisseauVersLaGauche();
-			
+		
 			assertEquals("" + 
 			"...............\n" + 
 			"...............\n" +
@@ -83,14 +82,14 @@ import fr.unilim.iut.spaceinvaders.utils.HorsEspaceJeuException;
 			"...............\n" + 
 			"...............\n" + 
 			"...............\n" + 
-			"...............\n" + 
-			"......V........\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
-		}
-	    @Test
+			"......VVV......\n" + 
+			"......VVV......\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
+	    }
+	    
+		@Test
 		public void test_VaisseauImmobile_DeplacerVaisseauVersLaGauche() {
 			
-			spaceinvaders.positionnerUnNouveauVaisseau(3,2,7,9);
-
+			spaceinvaders.positionnerUnNouveauVaisseau(3,2,0,9);
 			spaceinvaders.deplacerVaisseauVersLaGauche();
 			
 			assertEquals("" + 
@@ -102,9 +101,10 @@ import fr.unilim.iut.spaceinvaders.utils.HorsEspaceJeuException;
 			"...............\n" + 
 			"...............\n" + 
 			"...............\n" + 
-			"...............\n" + 
-			"V..............\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
+			"VVV............\n" + 
+			"VVV............\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
 		}
+		
 	    
 	    @Test
 		public void test_UnNouveauVaisseauPositionneDansEspaceJeuMaisAvecDimensionTropGrande_DoitLeverUneExceptionDeDebordement() {

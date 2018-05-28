@@ -18,7 +18,7 @@ public class SpaceInvaders {
 	   }
 
 
-		public String recupererEspaceJeuDansChaineASCII() {
+	    public String recupererEspaceJeuDansChaineASCII() {
 			StringBuilder espaceDeJeu = new StringBuilder();
 			for (int y = 0; y < hauteur; y++) {
 				for (int x = 0; x < longueur; x++) {
@@ -69,8 +69,8 @@ public class SpaceInvaders {
 		}
 
 		public void deplacerVaisseauVersLaGauche() {
-			if (vaisseau.abscisseLaPlusAGauche() >0) vaisseau.seDeplacerVersLaGauche();
-			
+			if (0 < vaisseau.abscisseLaPlusAGauche())
+				vaisseau.seDeplacerVersLaGauche();
 		}
 		
 		public void test_unNouveauVaisseauAvecDimensionEstCorrectementPositionneDansEspaceJeu() {
