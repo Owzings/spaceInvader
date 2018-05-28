@@ -146,7 +146,7 @@ import fr.unilim.iut.spaceinvaders.utils.HorsEspaceJeuException;
 	    
 	    
 	    @Test
-	    public void test_VaisseauAvance_DeplacerVaisseauVersLaDroite(int vitesse) {
+	    public void test_VaisseauAvance_DeplacerVaisseauVersLaDroite() {
 
 	        spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(3,2),new Position(7,9),3);
 	        spaceinvaders.deplacerVaisseauVersLaDroite();
