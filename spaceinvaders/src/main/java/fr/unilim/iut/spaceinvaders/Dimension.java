@@ -16,5 +16,4 @@ public class Dimension {
 	public int hauteur() {
 		return this.hauteur;
 	}
-
 }
