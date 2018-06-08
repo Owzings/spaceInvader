@@ -21,6 +21,7 @@ public class SpaceInvadersTest {
 	public void initialisation(){
 		spaceinvaders=new SpaceInvaders(15,10);
 	}
+	//test
 	
 	@Test
     public void test_AuDebut_JeuSpaceInvaderEstVide() {
